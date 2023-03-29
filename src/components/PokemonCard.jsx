@@ -1,7 +1,8 @@
 import React from 'react';
 
-const PokemonCard = () => {
-  const pokemon = pokemonList[0]
+const PokemonCard = (props) => {
+  const pokemonList = props.pokemonList;
+  const pokemon = pokemonList[0];
   return (
     <figure className="card">
       {pokemon.imgSrc ? (
