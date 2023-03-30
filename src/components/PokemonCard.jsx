@@ -1,17 +1,12 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-const PokemonCard = (props) => {
-  const pokemonList = props.pokemonList;
-  const pokemon = pokemonList[0];
+const PokemonCard = ({pokemon}) => {
+  const{ name, imgSrc } = pokemon;
   return (
     <figure className="card">
-      {pokemon.imgSrc ? (
-        <img src={pokemon.imgSrc} alt={pokemon.name} className="card-img"/>
-      ) : (
-        <p>???</p>
-      )}
-      <figcaption>{pokemon.name}</figcaption>
+      <h2>{name}</h2>
+      <img src={imgSrc} alt={name} className="card-img" />
     </figure>
   );
 };
