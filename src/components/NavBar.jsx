@@ -1,16 +1,15 @@
 import React from 'react';
 
-const NavBar = ({ goToPreviousPokemon, goToNextPokemon, pokemonIndex, pokemonList }) => {
-    return (
-      <div>
-        <button onClick={goToPreviousPokemon} disabled={pokemonIndex === 0}>
-          Previous
+const NavBar = ({ pokemonList, onPokemonSelect }) => {
+  return (
+    <div>
+      {pokemonList.map((pokemon, index) => (
+        <button key={index} onClick={() => onPokemonSelect(index)}>
+          {pokemon.name}
         </button>
-        <button onClick={goToNextPokemon} disabled={pokemonIndex === pokemonList.length - 1}>
-          Next
-        </button>
-      </div>
-    );
-  };
+      ))}
+    </div>
+  );
+};
 
 export default NavBar;

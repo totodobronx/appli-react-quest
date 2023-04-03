@@ -38,6 +38,10 @@ const App = () => {
 
 const [pokemonIndex, setPokemonIndex] = useState(0);
 
+const onPokemonSelect = (index) => {
+  setPokemonIndex(index);
+};
+
  const goToPreviousPokemon = () => {
    setPokemonIndex(pokemonIndex => pokemonIndex - 1);
  };
@@ -55,10 +59,9 @@ const [pokemonIndex, setPokemonIndex] = useState(0);
    <div>
      <PokemonCard pokemon={pokemon} />
      <NavBar
-        goToPreviousPokemon={goToPreviousPokemon}
-        goToNextPokemon={goToNextPokemon}
-        pokemonIndex={pokemonIndex}
         pokemonList={pokemonList}
+        onPokemonSelect={onPokemonSelect}
+        pokemonIndex={pokemonIndex}
      />
    </div>
  );
