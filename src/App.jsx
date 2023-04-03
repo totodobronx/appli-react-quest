@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import React from 'react';
@@ -6,6 +6,9 @@ import PokemonCard from './components/PokemonCard';
 import NavBar from './components/NavBar';
 
 const App = () => {
+  useEffect(() => {
+    alert("hello pokemon trainer :)")
+  }, []);
   const pokemonList = [    
  {
    name: "bulbasaur",
